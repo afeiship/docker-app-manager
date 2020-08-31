@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+
+  admin:
+    image: nginx
+    volumes:
+      - ./apps/admin:/app
+      - ./docker/admin/conf.d:/etc/nginx/conf.d
+      - ./logs/admin/nginx:/var/log/nginx
+    environment:
+      VIRTUAL_HOST: site1.moban.work
+
+  web:
+    image: nginx
+    volumes:
+      - ./apps/web:/app
+      - ./docker/web/conf.d:/etc/nginx/conf.d
+      - ./logs/web/nginx:/var/log/nginx
+    environment:
+      VIRTUAL_HOST: site2.moban.work
+
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    volumes:
+      - ./apps/node:/app
+    environment:
+      VIRTUAL_HOST: site3.moban.work

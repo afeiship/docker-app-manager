@@ -1,0 +1,20 @@
+{
+  "name": "@feizheng/docker-app-manager",
+  "version": "1.0.0",
+  "description": "Sites manager for shebao.work.",
+  "homepage": "https://github.com/afeiship/docker-app-manager",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "scripts": {
+    "tmp:rest": "del .tmp && mkdir .tmp",
+    "docker:up": "docker-compose up --build",
+    "docker:down": "docker-compose down",
+    "sites:start": "serve sites/admin -l 8081 & serve sites/web -l 8082"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  }
+}
