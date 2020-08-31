@@ -16,7 +16,7 @@ services:
       - ./docker/admin/conf.d:/etc/nginx/conf.d
       - ./logs/admin/nginx:/var/log/nginx
     environment:
-      VIRTUAL_HOST: site1.moban.work
+      VIRTUAL_HOST: site1.moban.work,admin.moban.work
 
   web:
     image: nginx
@@ -25,7 +25,7 @@ services:
       - ./docker/web/conf.d:/etc/nginx/conf.d
       - ./logs/web/nginx:/var/log/nginx
     environment:
-      VIRTUAL_HOST: site2.moban.work
+      VIRTUAL_HOST: site2.moban.work,www.moban.work
 
   node:
     build:
