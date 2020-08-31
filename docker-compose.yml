@@ -5,9 +5,11 @@ services:
     image: jwilder/nginx-proxy
     ports:
       - "80:80"
+      - "443:443"
       - "3000:80"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./docker/certs:/etc/nginx/certs:ro
 
   admin:
     image: nginx
@@ -15,6 +17,7 @@ services:
       - ./apps/admin:/app
       - ./docker/admin/conf.d:/etc/nginx/conf.d
       - ./logs/admin/nginx:/var/log/nginx
+      - ./docker/certs:/etc/nginx/certs:ro
     environment:
       VIRTUAL_HOST: site1.moban.work,admin.moban.work
 
@@ -24,6 +27,7 @@ services:
       - ./apps/web:/app
       - ./docker/web/conf.d:/etc/nginx/conf.d
       - ./logs/web/nginx:/var/log/nginx
+      - ./docker/certs:/etc/nginx/certs:ro
     environment:
       VIRTUAL_HOST: site2.moban.work,www.moban.work
 

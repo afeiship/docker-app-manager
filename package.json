@@ -8,7 +8,8 @@
     "email": "1290657123@qq.com"
   },
   "scripts": {
-    "tmp:rest": "del .tmp && mkdir .tmp",
+    "log:reset": "del logs && mkdir logs",
+    "tmp:reset": "del .tmp && mkdir .tmp",
     "docker:up": "docker-compose up --build",
     "docker:up-d": "docker-compose up --d",
     "docker:down": "docker-compose down",
