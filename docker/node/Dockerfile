@@ -12,4 +12,4 @@ COPY docker/node/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
 
-EXPOSE 80
+EXPOSE 3000
