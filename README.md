@@ -1,5 +1,5 @@
-# sites-manager
-> Sites manager for shebao.work.
+# docker-app-manager
+> Multiple app manager based on docker.
 
 ## sites
 - http://site1.moban.work
