@@ -5,6 +5,8 @@
 - http://site1.moban.work
 - http://site2.moban.work
 - http://site3.moban.work
+- http://www.moban.work
+- http://admin.moban.work
 
 
 ## hosts
