@@ -10,6 +10,7 @@
   "scripts": {
     "tmp:rest": "del .tmp && mkdir .tmp",
     "docker:up": "docker-compose up --build",
+    "docker:up-d": "docker-compose up --d",
     "docker:down": "docker-compose down",
     "sites:start": "serve sites/admin -l 8081 & serve sites/web -l 8082"
   },
